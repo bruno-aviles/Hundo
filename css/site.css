@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&family=Roboto:ital,wght@1,500&display=swap');
+
 /* Set up your color variable scheme */
 :root {
     --primary-color: #1d5888;
@@ -6,13 +9,14 @@
     --white-color: #dff3e4;
 }
 
+
 body {color: var(--dark-color);}
 
 nav {background-color:var(--dark-color);}
 
 footer{background-color:var(--dark-color);}
 
-h1,h2,h3,h4,h5,h6 {color: var(--primary-color);}
+h1,h2,h3,h4,h5,h6 {color: var(--white-color);}
 
 footer {
     padding-right: 1rem;
@@ -26,6 +30,14 @@ footer .social>a{
 footer .social>a:hover {
     opacity: 0.9;
     color: var(--secondary-color);
+}
+
+strong {
+    color: var(--secondary-color);
+}
+
+.logoFont{
+    font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
 .bsicon{
@@ -54,6 +66,12 @@ code[class*="language-"],
         word-wrap: break-word;
 }
 
+main {
+    height: 100vh;
+    background: #DC2424;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4A569D, #DC2424);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
 
 main>.container {
     padding: 60px 15px 0;
