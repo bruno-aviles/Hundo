@@ -67,18 +67,82 @@
                     <!-- Insert App Project Code -->
                     <pre class="line-numbers">
                     <code class="language-javascript">
-                        // Call Hello World 
-                        function HelloWorld(){ 
-                            alert("hello world"); 
-                        }
+                        // get the values from the page
+// starts or controller function
+function getValues(){
+    // get values from the page
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    // We need validate our input
+    // parse into Integers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    if(Number.isInteger(startValue) && Number.isInteger(endValue)){
+        // we call generateNumbers
+        let numbers = generateNumber(startValue, endValue);
+        // we call displayNumbers
+        displayNumbers(numbers);
+    }else{
+        alert("You must enter integers");
+    }
+
+
+}
+
+// generate numbers from startValue to the endValue
+// logic function(s)
+function generateNumber(sValue, eValue){
+    
+    let numbers = [];
+
+    // we want to get all numbers from start to end
+    for(let index = sValue; index <= eValue; index++){
+        // this will execute in a loop until index = eValue
+        numbers.push(index);
+    }
+    return numbers;
+
+}
+
+// display the numbers and mark even numbers BOLD
+// display or view functions
+function displayNumbers(numbers){
+
+    let templateRows = ""
+
+    for (let index = 0; index < numbers.length; index++) {
+        
+        let className = "even"
+        let number = numbers[index];
+
+        if(number % 2 == 0){
+            className = "even"
+        }else{
+            className = "odd"
+        }
+        //This does render correctly with Prism see the source
+        templateRows += `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>`;        
+    }
+
+    document.getElementById("results").innerHTML = templateRows;
+
+}
                     </code>
                     </pre>
                 </div>
                 <!-- Description of Code -->
                 <div class="col-lg-4">
-                    <p>The Code is Structures in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p>The code is structured in three functions</p>
+                    <h5>getValues</h5>
+                    <p><strong>getValues</strong> accepts(gets) the user input from the page. It utilizes <strong>getElementById</strong> to pull the values from the page. It passes those values to the <strong>generateNumbers</strong> function. The function <strong>generateNumbers</strong> returns an array of values and passes that array to the <strong>displayNumbers</strong> function.</p>
+
+                    <h5>generateNumbers</h5>
+                    <p><strong>generateNumbers</strong> takes in two parameters <strong>startValue</strong> and <strong>endValue</strong>. We create a variable (numbers) that holds an array. A for loop is used to generate all of the numbers between <strong>startValue</strong> and <strong>endValue</strong>.</p>
+
+                    <h5>displayNumbers</h5>
+                    <p><strong>displayNumbers</strong> takes in one parameter numbers. The variable (numbers) is an array that holds values between <strong>startValue</strong> and <strong>endValue</strong>. We create a variable (className) that holds the CSS class name that we will use to bold the numbers. We create a variable (templateRows) that will hold the HTML we will write to the page.</p>
+                    <p>A for loop is used to check all of the numbers to see if they are even or odd. The remainder operator (%) is used to see if the number is divisable by two. If it returns zero then it is even. if not (else) it is odd. The correct (className) is injected into the HTML row for display. Each iteration of the loop adds to the (templateRows) variable. At the end of the loop the resulting HTML rows are written to the page.</p>
                 </div>
             </div>
         </div>

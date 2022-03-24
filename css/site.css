@@ -19,13 +19,18 @@
 }
 
 
-body {color: var(--dark-color);}
+body {
+    color: var(--dark-color);
+    background: #DC2424;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4A569D, #DC2424);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 nav {background-color:var(--dark-color);}
 
 footer{background-color:var(--dark-color);}
 
-h1,h2,h3,h4,h5,h6 {color: var(--white-color);}
+h1,h2,h3,h4,h5,h6, p {color: var(--white-color);}
 
 footer {
     padding-right: 1rem;
@@ -73,13 +78,6 @@ code[class*="language-"],
         white-space: pre-wrap;
         word-break: break-all;
         word-wrap: break-word;
-}
-
-main {
-    height: 100vh;
-    background: #DC2424;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4A569D, #DC2424);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4A569D, #DC2424); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
 }
 
 main>.container {
